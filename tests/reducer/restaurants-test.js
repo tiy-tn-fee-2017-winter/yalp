@@ -64,4 +64,12 @@ module('reducerrestaurants', () => {
 
     assert.deepEqual(restaurants(oldState, action), expectedState);
   });
+
+  test('RESTAURANTS@ADD_REVIEW: with no reviews', (assert) => {
+    const oldState = [{ id: 2, name: 'Brew Works', reviews: [] }];
+    const action = { type: 'RESTAURANTS@ADD_REVIEW', restaurantId: 2, data: { description: 'GREAT!!!' } };
+    const expectedState = [{ id: 2, name: 'Brew Works', reviews: [{ description: 'GREAT!!!' }] }];
+
+    assert.deepEqual(restaurants(oldState, action), expectedState);
+  });
 });

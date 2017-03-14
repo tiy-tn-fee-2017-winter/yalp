@@ -12,6 +12,17 @@ export default function restaurants(state = [], action) {
       return unionBy([action.data], state, 'id');
     case 'RESTAURANTS@DESTROY_COMPLETE':
       return state.filter(({ id }) => id !== action.id);
+    case 'RESTAURANTS@ADD_REVIEW':
+      return state.map((r) => {
+        if (r.id === action.restaurantId) {
+          return {
+            ...r,
+            reviews: [...r.reviews, action.data],
+          };
+        }
+
+        return r;
+      });
     default:
       return state;
   }
