@@ -57,3 +57,40 @@ $fa-font-path: '//netdna.bootstrapcdn.com/font-awesome/4.3.0/fonts';
     margin-left: 0.4rem;
   }
 }
+
+.title {
+  padding-bottom: 0.4rem;
+  border-bottom: 0.1rem solid #aaa;
+  text-align: center;
+}
+
+@keyframes placeHolderShimmer{
+    0%{
+        background-position: -468px 0
+    }
+    100%{
+        background-position: 468px 0
+    }
+}
+
+.col {
+  margin-top: 1rem;
+}
+
+.restaurant {
+  &__info {
+    display: flex;
+    align-items: center;
+
+    > * + * {
+      margin-left: 0.4rem;
+    }
+  }
+
+  &__more {
+    display: flex;
+    justify-content: flex-end;
+  }
+}
+
+@import 'placeholder';
