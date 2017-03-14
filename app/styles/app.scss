@@ -1,6 +1,59 @@
 // @import 'yoga';
 // @import 'normalize';
 
-// $fa-font-path: '//netdna.bootstrapcdn.com/font-awesome/4.3.0/fonts';
-// @import 'font-awesome';
+$fa-font-path: '//netdna.bootstrapcdn.com/font-awesome/4.3.0/fonts';
+@import 'font-awesome';
 @import 'box-sizing';
+@import 'bootstrap';
+
+.section {
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+}
+
+.nav-item {
+  .nav-link {
+    &.router-link-active {
+      color: #fff;
+    }
+  }
+}
+
+.rating {
+  font-size: 2rem;
+  opacity: 0.4;
+  cursor: pointer;
+
+  &--full {
+    opacity: 1;
+  }
+}
+
+.level {
+  display: flex;
+
+  &-item {
+    flex-basis: 0;
+    flex-grow: 1;
+  }
+}
+
+.checkbox {
+  padding: 0;
+  border: 0;
+  background: none;
+  cursor: pointer;
+
+  &:active, &:focus {
+    outline: none;
+  }
+}
+
+.form-actions {
+  display: flex;
+  justify-content: flex-end;
+
+  & > * + * {
+    margin-left: 0.4rem;
+  }
+}
