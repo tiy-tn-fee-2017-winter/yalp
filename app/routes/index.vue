@@ -24,15 +24,11 @@
         <div class="col-4" v-for="restaurant in restaurants.items">
           <div class="card">
             <div class="card-block">
-              <h2>{{restaurant.name}}</h2>
-              <p class="restaurant__info">
-                <counted-icons :value="restaurant.price_level" icon="dollar" :color="style.colors.price"></counted-icons>
-                <span class="restaurant__category"> - {{restaurant.category}}</span>
-              </p>
-
-              <div class="restaurant__more">
-                <router-link class="btn btn-outline-primary" to="/">Read More</router-link>
-              </div>
+              <restaurant-header :restaurant="restaurant">
+                <div class="restaurant__more">
+                  <router-link class="btn btn-outline-primary" :to="{ name: 'restaurant-detail', params: { id: restaurant.id } }">Read More</router-link>
+                </div>
+              </restaurant-header>
             </div>
           </div>
         </div>
@@ -48,10 +44,12 @@ import store from '../store';
 import colors from '../colors';
 
 import CountedIcons from '../components/counted-icons.vue';
+import RestaurantHeader from '../components/restaurant-header.vue';
 
 export default {
   components: {
-    CountedIcons
+    CountedIcons,
+    RestaurantHeader
   },
   data() {
     return {

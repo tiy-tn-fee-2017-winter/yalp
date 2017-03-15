@@ -3,7 +3,7 @@
     <div class="navbar navbar-inverse bg-inverse navbar-toggleable-sm">
       <div class="container">
         <button class="navbar-toggler navbar-toggler-right" type="button"><span class="navbar-toggler-icon"></span></button>
-        <a class="navbar-brand" href="#">Navbar</a>
+        <a class="navbar-brand" href="#">Yalp</a>
 
         <div class="collapse navbar-collapse active" id="navbarNav">
           <ul class="navbar-nav">

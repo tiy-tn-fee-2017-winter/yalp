@@ -5,6 +5,7 @@ import VueRouter from 'vue-router';
 
 import App from './routes/application.vue';
 import RestaruantNew from './routes/restaurant-new.vue';
+import RestaruantDetail from './routes/restaurant-detail.vue';
 import Index from './routes/index.vue';
 
 Vue.use(VueRouter);
@@ -16,9 +17,14 @@ const routes = [
     component: Index,
   },
   {
-    path: '/restaurant/new',
+    path: '/restaurants/new',
     name: 'restaurant-new',
     component: RestaruantNew,
+  },
+  {
+    path: '/restaurants/:id',
+    name: 'restaurant-detail',
+    component: RestaruantDetail,
   },
 ];
 
