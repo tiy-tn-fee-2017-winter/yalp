@@ -36,7 +36,7 @@
 
 <script>
 import colors from '../colors';
-import CountedIcons from '../components/counted-icons.vue';
+import CountedIcons from './counted-icons.vue';
 
 export default {
   components: {

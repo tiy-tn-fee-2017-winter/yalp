@@ -3,4 +3,5 @@ export default {
   flair: '#915ecb',
   price: '#64cb5e',
   disabled: '#333',
+  stars: '#ff6a6a',
 };
