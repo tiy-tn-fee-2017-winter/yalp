@@ -1,5 +1,8 @@
 <template lang="html">
   <div class="">
+    <div class="alert alert-danger" v-if="error" @click="error = false">
+      <h2>There was an error logging in</h2>
+    </div>
     <div class="card">
       <form @submit.prevent="save" class="card-block">
         <h2>Login</h2>
@@ -27,6 +30,7 @@
 export default {
   data() {
     return {
+      error: false,
       formValues: {
         username: '',
         password: ''
@@ -36,7 +40,22 @@ export default {
 
   methods: {
     save() {
+      fetch('http://localhost:3333/login', {
+        method: 'POST',
+        headers: { Accept: 'application/json', 'Content-Type': 'application/json' },
+        body: JSON.stringify(this.formValues)
+      }).then((res) => {
+        if (res.ok) {
+          return res.json();
+        }
 
+        // Still want error handling
+        return Promise.reject(res.json());
+      }).then((data) => {
+        localStorage.jwt = data.token;
+      }).catch(() => {
+        this.error = true;
+      });
     },
   },
 };
