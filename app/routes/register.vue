@@ -1,7 +1,11 @@
 <template lang="html">
   <div class="">
+    <div v-if="users.loading === 'error'" class="alert alert-danger">
+      <h2>There was an error creating this user</h2>
+    </div>
     <div class="card">
-      <form @submit.prevent="save" class="card-block">
+      <pre>{{users}}</pre>
+      <form v-on:submit.prevent="save" class="card-block">
         <h2>Register</h2>
 
         <div class="form-group">
@@ -23,10 +27,15 @@
 </template>
 
 <script>
+import store from '../store';
+import userResource from '../resources/user';
+// const { actionCreators: { create } } = userResource;
+const create = userResource.actionCreators.create;
 
 export default {
   data() {
     return {
+      users: this.$select('users'),
       formValues: {
         username: '',
         password: ''
@@ -36,7 +45,11 @@ export default {
 
   methods: {
     save() {
-
+      // Dispatch a new create action
+      store.dispatch(create(this.formValues))
+        .then(() => {
+          this.$router.push({ name: 'login' });
+        }).catch(() => {});
     },
   },
 };
