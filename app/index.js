@@ -7,6 +7,8 @@ import App from './routes/application.vue';
 import RestaruantNew from './routes/restaurant-new.vue';
 import RestaruantDetail from './routes/restaurant-detail.vue';
 import Index from './routes/index.vue';
+import Login from './routes/login.vue';
+import Register from './routes/register.vue';
 
 Vue.use(VueRouter);
 
@@ -25,6 +27,16 @@ const routes = [
     path: '/restaurants/:id',
     name: 'restaurant-detail',
     component: RestaruantDetail,
+  },
+  {
+    path: '/register',
+    name: 'register',
+    component: Register,
+  },
+  {
+    path: '/login',
+    name: 'login',
+    component: Login,
   },
 ];
 

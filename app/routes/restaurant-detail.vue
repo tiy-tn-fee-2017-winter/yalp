@@ -71,7 +71,7 @@ export default {
 
   watch: {
     '$route.params.id': 'loadModel',
-    restaurants: 'loadModel',
+    'restaurants.items': 'loadModel',
   },
 
   mounted() {

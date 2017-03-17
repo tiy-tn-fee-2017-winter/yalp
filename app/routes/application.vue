@@ -11,6 +11,12 @@
               <router-link class="nav-link" v-bind:to="{ name: 'index' }">Home</router-link>
             </li>
             <li class="nav-item">
+              <router-link class="nav-link" v-bind:to="{ name: 'login' }">Login</router-link>
+            </li>
+            <li class="nav-item">
+              <router-link class="nav-link" v-bind:to="{ name: 'register' }">Register</router-link>
+            </li>
+            <li class="nav-item">
               <router-link class="nav-link" v-bind:to="{ name: 'restaurant-new' }">Add Restaurant</router-link>
             </li>
           </ul>
