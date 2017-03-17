@@ -4,7 +4,7 @@
       <h2>There was an error creating this user</h2>
     </div>
     <div class="card">
-      <pre>{{users}}</pre>
+      <!-- <pre>{{users}}</pre> -->
       <form v-on:submit.prevent="save" class="card-block">
         <h2>Register</h2>
 
